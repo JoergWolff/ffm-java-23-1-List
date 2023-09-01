@@ -19,13 +19,23 @@ public class School {
     public void addStudent(Student student){
         students.add(student);
     }
-    public Student getStudentById(int id){
+    public Student showStudentById(int id){
         for(Student student:students){
             if(student.id == id){
                 return student;
             }
         }
         return  null;
+    }
+
+    public void removeStudentById(int id){
+        int i=0;
+        for(Student student:students){
+            if(student.id == id){
+                students.remove(i);
+            }
+            i++;
+        }
     }
     public void showStudents(){
         System.out.println(this.students);

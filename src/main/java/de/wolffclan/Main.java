@@ -22,7 +22,12 @@ public class Main {
         schoolStudents.addStudent(new Student(8,"Obermoseer","Franz", 12,"7a"));
         schoolStudents.showStudents();
 
-        System.out.println("get one student\n-------");
-        System.out.println("Search for student with id = 7: "+schoolStudents.getStudentById(7));
+        System.out.println("Show one student\n-------");
+        System.out.println("Search for student with id = 7: "+schoolStudents.showStudentById(7));
+
+        System.out.println("Remove one student\n-------");
+        schoolStudents.removeStudentById(7);
+        System.out.println("Remove Student with id 7:\n");
+        schoolStudents.showStudents();
     }
 }
