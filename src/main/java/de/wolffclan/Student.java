@@ -3,28 +3,33 @@ package de.wolffclan;
 import java.util.Objects;
 
 public class Student {
+    int id;
     String lastName;
     String firstName;
     int age;
     String schoolClass;
 
-    public String getLastName() {
-        return lastName;
-    }
-
     public Student() {
     }
 
-    public Student(String lastName, String schoolClass) {
-        this.lastName = lastName;
-        this.schoolClass = schoolClass;
-    }
-
-    public Student(String lastName, String firstName, int age, String schoolClass) {
+    public Student(int id, String lastName, String firstName, int age, String schoolClass) {
+        this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
         this.age = age;
         this.schoolClass = schoolClass;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public void setLastName(String lastName) {
@@ -58,7 +63,8 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "lastName='" + lastName + '\'' +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", age=" + age +
                 ", schoolClass='" + schoolClass + '\'' +
@@ -70,11 +76,11 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return age == student.age && Objects.equals(lastName, student.lastName) && Objects.equals(firstName, student.firstName) && Objects.equals(schoolClass, student.schoolClass);
+        return id == student.id && age == student.age && Objects.equals(lastName, student.lastName) && Objects.equals(firstName, student.firstName) && Objects.equals(schoolClass, student.schoolClass);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lastName, firstName, age, schoolClass);
+        return Objects.hash(id, lastName, firstName, age, schoolClass);
     }
 }

@@ -19,6 +19,14 @@ public class School {
     public void addStudent(Student student){
         students.add(student);
     }
+    public Student getStudentById(int id){
+        for(Student student:students){
+            if(student.id == id){
+                return student;
+            }
+        }
+        return  null;
+    }
     public void showStudents(){
         System.out.println(this.students);
     }
