@@ -62,7 +62,7 @@ public class Student {
                 ", firstName='" + firstName + '\'' +
                 ", age=" + age +
                 ", schoolClass='" + schoolClass + '\'' +
-                '}';
+                '}' + "\n";
     }
 
     @Override
